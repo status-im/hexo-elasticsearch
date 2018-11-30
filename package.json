@@ -1,0 +1,41 @@
+{
+  "name": "hexo-elasticsearch",
+  "version": "1.2.5",
+  "description": "Index content of your hexo website in ElasticSearch and add search within minutes.",
+  "main": "index",
+  "directories": {
+    "lib": "./lib"
+  },
+  "scripts": {
+    "test": "exit 0",
+    "posttest": "eslint *.js ./lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/status-im/hexo-elasticsearch.git"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "keywords": [
+    "hexo",
+    "elasticsearch",
+    "search"
+  ],
+  "author": {
+    "name": "Jakub Sokołowski",
+    "email": "jakub@status.im",
+    "url": "https://github.com/jakubgs"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oncletom/hexo-algolia/issues"
+  },
+  "homepage": "https://github.com/oncletom/hexo-algolia",
+  "dependencies": {
+    "p-each-series": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1"
+  }
+}
