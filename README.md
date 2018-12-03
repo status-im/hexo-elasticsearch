@@ -26,7 +26,7 @@ elasticsearch:
 ```
 And the required HTTP Auth env variables need to be provided to index:
 ```bash
- > export HEXO_ES_USER='es-user'
- > export HEXO_ES_PASS='super-secret-password'
- > hexo elasticsearch
+export HEXO_ES_USER='es-user'
+export HEXO_ES_PASS='super-secret-password'
+hexo elasticsearch
 ```
