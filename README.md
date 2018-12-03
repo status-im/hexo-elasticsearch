@@ -15,7 +15,7 @@ The hexo algolia command can be run manually on your computer and on a continuou
 npm install --save https://github.com/status-im/hexo-elasticsearch.git
 ```
 
-# Configuration & Usage
+# Configuration
 
 The required configuration in `_config.yml` under `elasticsearch` keys is:
 ```yaml
@@ -28,5 +28,19 @@ And the required HTTP Auth env variables need to be provided to index:
 ```bash
 export HEXO_ES_USER='es-user'
 export HEXO_ES_PASS='super-secret-password'
+```
+
+# Usage
+
+Standard usage for indexing:
+```bash
 hexo elasticsearch
+```
+Dry Run:
+```bash
+hexo elasticsearch --dry-run
+```
+Delete index before upload:
+```bash
+hexo elasticsearch --delete
 ```
