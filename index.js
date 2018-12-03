@@ -10,8 +10,8 @@ hexo.extend.console.register(
     options: [
       { name: '--dry-run',
         desc: 'Does not push content to ElasticSearch' },
-      { name: '--flush',
-        desc: 'Resets the ElasticSearch index before starting the indexation' },
+      { name: '--delete',
+        desc: 'Deletes the ElasticSearch index before starting the indexation' },
     ],
   },
   command
