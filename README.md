@@ -9,6 +9,12 @@ This is what you get when you install it:
 
 The hexo algolia command can be run manually on your computer and on a continuous integration system.
 
+# Install
+
+```bash
+npm install --save https://github.com/status-im/hexo-elasticsearch.git
+```
+
 # Configuration & Usage
 
 The required configuration in `_config.yml` under `elasticsearch` keys is:
