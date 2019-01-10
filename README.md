@@ -44,3 +44,25 @@ Delete index before upload:
 ```bash
 hexo elasticsearch --delete
 ```
+
+# Helpers
+
+If you want to start using the search you can use the two included helpers:
+
+* `elasticsearch_config` - Adds neccessary `script` and `meta` tags with configuration from your `_config.yml`.
+* `elasticsearch_script` - Adds the JS script which handles the given target tag to execute the query.
+
+## Example
+
+```html
+<html>
+  <head>
+    <meta charset="utf-8">
+    <%- elasticsearch_config() %>
+  </head>
+  <body>
+    <input type="text" id="userSearch" placeholder="Search...">
+    <%- elasticsearch_script({target: "input#userSearch", size: 6}) %>
+  </body>
+<html>
+```
