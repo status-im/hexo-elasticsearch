@@ -32,6 +32,14 @@ hexo.extend.generator.register('jquery', function(locals) {
   };
 });
 
+hexo.extend.generator.register('jquery-ui', function(locals) {
+  const sourceFile = require.resolve('jquery-ui-dist/jquery-ui.min.js')
+  return {
+    path: path.join('js', 'jquery-ui.min.js'),
+    data: function() { return fs.createReadStream(sourceFile); }
+  };
+});
+
 hexo.extend.generator.register('marcopolo', function(locals) {
   const sourceFile = require.resolve('jquery-marcopolo/src/jquery.marcopolo.js')
   return {
