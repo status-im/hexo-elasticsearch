@@ -7,6 +7,7 @@ const command = require('./lib/command');
 const searchConfig = require('./lib/helpers/search_config.js');
 const searchScript = require('./lib/helpers/search_script.js');
 
+/* definition of the elasticsearch hexo command */
 hexo.extend.console.register(
   'elasticsearch',
   'Index your content in ElasticSearch API',
@@ -21,29 +22,24 @@ hexo.extend.console.register(
   command
 );
 
+/* helpers that configure connection and add JS handling the input field */
 hexo.extend.helper.register('elasticsearch_config', searchConfig.bind(null, hexo.config));
 hexo.extend.helper.register('elasticsearch_script', searchScript.bind(null, hexo.config));
 
-hexo.extend.generator.register('jquery', function(locals) {
-  const sourceFile = require.resolve('jquery/dist/jquery.min.js')
-  return {
-    path: path.join('js', 'jquery.min.js'),
-    data: function() { return fs.createReadStream(sourceFile); }
-  };
-});
+/* list of required libraries for elasticsearch ui elements to work */
+const JS_LIBS = {
+  'jquery': 'jquery/dist/jquery.min.js',
+  'jquery-ui': 'jquery-ui-dist/jquery-ui.min.js',
+  'jquery-marcopolo': 'jquery-marcopolo/src/jquery.marcopolo.js',
+};
 
-hexo.extend.generator.register('jquery-ui', function(locals) {
-  const sourceFile = require.resolve('jquery-ui-dist/jquery-ui.min.js')
-  return {
-    path: path.join('js', 'jquery-ui.min.js'),
-    data: function() { return fs.createReadStream(sourceFile); }
-  };
-});
-
-hexo.extend.generator.register('marcopolo', function(locals) {
-  const sourceFile = require.resolve('jquery-marcopolo/src/jquery.marcopolo.js')
-  return {
-    path: path.join('js', 'jquery.marcopolo.js'),
-    data: function() { return fs.createReadStream(sourceFile); }
-  };
+/* This copies the defined libraries to the output folder */
+hexo.extend.generator.register('elasticsearch', function(locals) {
+  return Object.keys(JS_LIBS).map(function(name) {
+    const sourceFile = require.resolve(JS_LIBS[name])
+    return {
+      path: path.join('js', JS_LIBS[name].split('/').pop()),
+      data: function() { return fs.createReadStream(sourceFile); }
+    };
+  });
 });
