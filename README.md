@@ -4,8 +4,9 @@
 This is what you get when you install it:
 
 * A new command, `hexo elasticsearch`, to index the content of your website.
-* ~~A theme helper to include Algolia search client~~ __TODO__
-* ~~another theme helper to configure the Algolia search client~~ __TODO__
+* Two helpers:
+  - One for configuring destination for queries.
+  - One for including a search JS script for handling input.
 
 The hexo algolia command can be run manually on your computer and on a continuous integration system.
 
