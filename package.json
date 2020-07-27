@@ -1,6 +1,6 @@
 {
   "name": "hexo-elasticsearch",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Index content of your hexo website in ElasticSearch and add search within minutes.",
   "main": "index",
   "directories": {
