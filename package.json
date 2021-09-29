@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/oncletom/hexo-algolia",
   "dependencies": {
-    "elasticsearch": "^16.5.0",
+    "elasticsearch": "^16.7.2",
     "jquery": "3.5.0",
     "jquery-marcopolo": "git+https://github.com/jstayton/jquery-marcopolo.git#v1.8.1",
     "jquery-ui-dist": "^1.12.1",
